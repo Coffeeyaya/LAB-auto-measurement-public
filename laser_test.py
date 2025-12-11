@@ -50,17 +50,3 @@ for index, row in df.iterrows():
 
 time.sleep(3)
 time_dependent_wavelength(grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=10, off_time=10)
-
-# try:
-#     while True:
-#         try:
-#             cmd = conn.receive()
-#             time.sleep(1)
-#         except ConnectionError:
-#             print("Client disconnected.")
-#             break # break only the inner loop
-#         if  cmd == "test" and laser_state != "test":
-#             time_dependent_wavelength(conn, grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=10, off_time=10)    
-#     conn.close()
-# finally:
-#     server_socket.close()

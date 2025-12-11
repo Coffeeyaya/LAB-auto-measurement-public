@@ -63,7 +63,8 @@ def main():
     scroll_to_bottom()
 
     time.sleep(2)
-    TIME(laser_conn, material, device_number, measurement_index, laser_function=laser_function, rest_time=rest_time, dark_time1=dark_time1, dark_time2=dark_time2)    
+    TIME(laser_conn, material, device_number, measurement_index, laser_function=laser_function, 
+         rest_time=rest_time, dark_time1=dark_time1, dark_time2=dark_time2)    
 
 if __name__ == '__main__':
     main()
