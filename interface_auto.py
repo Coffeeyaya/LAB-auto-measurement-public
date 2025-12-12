@@ -126,13 +126,13 @@ work_flow_vg3 = [
 ]
 
 vg_arr = np.linspace(-4, 0, 5, dtype=int).astype(str)
-work_flow_vg = [
-    {
-        "measurement_index": f"vg-{i}",
-        "laser_function": f"wavelength,660",
-        "vg_value": "0"
-    }
-]
+# work_flow_vg = [
+#     {
+#         "measurement_index": f"vg-{i}",
+#         "laser_function": f"wavelength,660",
+#         "vg_value": "0"
+#     }
+# ]
 
 
 # work_flow = work_flow_vg1
