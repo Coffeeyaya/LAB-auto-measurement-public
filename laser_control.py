@@ -146,7 +146,7 @@ try:
             idx = wavelength_arr.index(wavelength)
             power = power_percentage_arr[idx]
             channel = channel_arr[idx]
-            single_on_off(conn, grid, channel, wavelength, power, on_time=3, off_time=3)
+            single_on_off(conn, grid, channel, wavelength, power, on_time=3, off_time=10)
 
         elif cmd == "wavelength" and laser_state != "wavelength":
             time_dependent_wavelength(conn, grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=1, off_time=10)
