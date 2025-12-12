@@ -5,7 +5,7 @@ REM Change directory to the folder where the BAT file is located
 cd /d %~dp0
 
 REM Call conda to activate the base environment
-call "C:\Users\YourUser\anaconda3\Scripts\activate.bat" base
+call "C:\\Users\\Snow\\anaconda3\\Scripts\\conda.exe" base
 
 REM Keep the terminal open
 cmd
