@@ -135,8 +135,8 @@ vg_arr = np.linspace(-4, 0, 5, dtype=int).astype(str)
 # ]
 
 
-# work_flow = work_flow_vg1
-work_flow = work_flow_vg1 + work_flow_vg2 + work_flow_vg3 # for wavelevngth dependent at vg = -4 ~ 0
+work_flow = work_flow_vg3
+# work_flow = work_flow_vg1 + work_flow_vg2 + work_flow_vg3 # for wavelevngth dependent at vg = -4 ~ 0
 # work_flow = work_flow_vg # vg dependent at wavelength = 660 nm
 
 
