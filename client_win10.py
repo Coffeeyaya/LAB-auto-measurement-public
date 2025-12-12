@@ -8,8 +8,8 @@ def main():
     menu = (
         "\n=== Command Menu ===\n"
         "0. quit\n"
-        "1. RUN iv_run.py\n"
-        "2. KILL iv_run.py\n"
+        "1. RUN lab_iv_run.py\n"
+        "2. KILL lab_iv_run.py\n"
         "3. RUN server_csv.py\n"
         "4. KILL server_csv.py\n"
         "5. RUN interface_auto.py\n"
@@ -26,8 +26,8 @@ def main():
             # Map menu number to structured JSON command
             cmd_map = {
                 "0": {"cmd": "QUIT"},
-                "1": {"cmd": "RUN", "target": "iv_run.py"},
-                "2": {"cmd": "KILL", "target": "iv_run.py"},
+                "1": {"cmd": "RUN", "target": "lab_iv_run.py"},
+                "2": {"cmd": "KILL", "target": "lab_iv_run.py"},
                 "3": {"cmd": "RUN", "target": "server_csv.py"},
                 "4": {"cmd": "KILL", "target": "server_csv.py"},
                 "5": {"cmd": "RUN", "target": "interface_auto.py"},
