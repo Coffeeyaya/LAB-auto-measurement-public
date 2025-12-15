@@ -47,7 +47,7 @@ for index, row in df.iterrows():
     wavelength_arr.append(wavelength)
     power_percentage_arr.append(power_percentage)
 
-wavelength_range = ["600", "680"]
+wavelength_range = ["450", "680"]
 
 indices = [
     i for i, w in enumerate(wavelength_arr)
