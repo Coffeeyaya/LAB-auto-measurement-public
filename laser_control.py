@@ -161,9 +161,7 @@ try:
             single_on_off(conn, grid, channel, wavelength, power, on_time=3, off_time=10)
 
         elif cmd == "wavelength" and laser_state != "wavelength":
-            ###
             time_dependent_wavelength(conn, grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=1, off_time=10)
-            ###
         # elif cmd == "power" and laser_state != "power":
         #     channel = 6
         #     power_values = ["30.5", "22.5", "16.8", "12.5", "9.3", "6.8", "5.3"] ### adjust this based on power measured
