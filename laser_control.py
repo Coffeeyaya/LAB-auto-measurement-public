@@ -31,6 +31,31 @@ def time_dependent_wavelength(conn, grid, channel_arr, wavelength_arr, power_per
     laser_state = "DONE"
     conn.send("DONE")
 
+def time_dependent_wavelength_ref(conn, grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=10, off_time=10):
+    global laser_state
+    laser_state = "ref_wavelength"
+    conn.send("ref_wavelength")
+    for i in range(len(channel_arr)):
+        channel = channel_arr[0]
+        wavelength = wavelength_arr[0]
+        power = power_percentage_arr[0]
+        # print(channel)
+        # print(wavelength)
+        # print(power)
+        on_coord = get_coord(grid, channel, "on")
+        change_lambda_function(grid, channel, wavelength)
+        change_power_function(grid, channel, power)
+        # turn on
+        move_and_click(on_coord)
+        time.sleep(on_time)
+
+        # turn off
+        move_and_click(on_coord)
+        time.sleep(off_time)
+
+    laser_state = "DONE"
+    conn.send("DONE")
+
 def time_dependent_power(conn, grid, channel, power_values, on_time=10, off_time=60):
     global laser_state
     laser_state = "power"
@@ -175,6 +200,8 @@ try:
             ###
             time_dependent_wavelength(conn, grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=1, off_time=10)
             ###
+        elif cmd == "ref_wavelength" and laser_state != "ref_wavelength":
+            time_dependent_wavelength_ref(conn, grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=1, off_time=10)
         # elif cmd == "power" and laser_state != "power":
         #     channel = 6
         #     power_values = ["30.5", "22.5", "16.8", "12.5", "9.3", "6.8", "5.3"] ### adjust this based on power measured
