@@ -7,8 +7,8 @@ from LabAuto.iv import get_window, scroll_to_bottom, change_measurement_mode, \
 from LabAuto.network import create_server, Connection
 
 # params
-material = 'mos2'
-device_number = '1-1'
+material = 'mw'
+device_number = '4-2'
 measurement_index = '0'
 # laser_function = 'wavelength_ref'
 laser_function = 'wavelength'
