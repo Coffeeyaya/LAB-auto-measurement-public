@@ -10,8 +10,8 @@ from LabAuto.network import create_server, Connection
 material = 'mw'
 device_number = '4-2'
 measurement_index = '0'
-# laser_function = 'wavelength_ref'
-laser_function = 'wavelength'
+laser_function = 'wavelength_ref'
+# laser_function = 'wavelength'
 rest_time = 1
 dark_time1 = 1
 dark_time2 = 1
