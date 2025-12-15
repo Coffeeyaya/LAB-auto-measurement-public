@@ -112,8 +112,9 @@ for index, row in df.iterrows():
     channel_arr.append(channel)
     wavelength_arr.append(wavelength)
     power_percentage_arr.append(power_percentage)
-
+###
 wavelength_range = ["450", "680"]
+###
 idx_min = wavelength_arr.index(wavelength_range[0])
 idx_max = wavelength_arr.index(wavelength_range[1])
 wavelength_arr = wavelength_arr[idx_min: idx_max + 1]
@@ -156,8 +157,9 @@ try:
             single_on_off(conn, grid, channel, wavelength, power, on_time=3, off_time=10)
 
         elif cmd == "wavelength" and laser_state != "wavelength":
+            ###
             time_dependent_wavelength(conn, grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=1, off_time=10)
-        
+            ###
         # elif cmd == "power" and laser_state != "power":
         #     channel = 6
         #     power_values = ["30.5", "22.5", "16.8", "12.5", "9.3", "6.8", "5.3"] ### adjust this based on power measured
