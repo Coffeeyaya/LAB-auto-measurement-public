@@ -35,7 +35,6 @@ def time_dependent_wavelength(grid, channel_arr, wavelength_arr, power_percentag
 grid = init_AOTF()
 # server_socket = create_server("0.0.0.0", 5001)
 # conn, addr = Connection.accept(server_socket)
-
 df = pd.read_csv("wavelength_power.csv")
 channel_arr = []
 wavelength_arr = []
@@ -47,25 +46,16 @@ for index, row in df.iterrows():
     channel_arr.append(channel)
     wavelength_arr.append(wavelength)
     power_percentage_arr.append(power_percentage)
-###
-wavelength_range = ["605", "610"]
-###
+
+wavelength_range = ["600", "680"]
+
 indices = [
     i for i, w in enumerate(wavelength_arr)
-    if wavelength_range[0] <= w <= wavelength_range[1]
+    if int(wavelength_range[0]) <= int(w) <= int(wavelength_range[1])
 ]
-if len(indices) == 0:
-    print('nothing to measure')
-if len(indices) == 1:
-    idx_min = indices[0]
-    idx_max = indices[0]
-else:
-    idx_min = indices[0]
-    idx_max = indices[1]
-    
-wavelength_arr = wavelength_arr[idx_min: idx_max + 1]
-channel_arr = channel_arr[idx_min: idx_max + 1]
-power_percentage_arr = power_percentage_arr[idx_min: idx_max + 1]
 
+wavelength_arr = [wavelength_arr[i] for i in indices]
+channel_arr = [channel_arr[i] for i in indices]
+power_percentage_arr = [power_percentage_arr[i] for i in indices]
 time.sleep(3)
 time_dependent_wavelength(grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=10, off_time=10)
