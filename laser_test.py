@@ -48,14 +48,21 @@ for index, row in df.iterrows():
     wavelength_arr.append(wavelength)
     power_percentage_arr.append(power_percentage)
 ###
-wavelength_range = ["450", "680"]
+wavelength_range = ["605", "610"]
 ###
 indices = [
     i for i, w in enumerate(wavelength_arr)
     if wavelength_range[0] <= w <= wavelength_range[1]
 ]
-idx_min = indices[0]
-idx_max = indices[1]
+if len(indices) == 0:
+    print('nothing to measure')
+if len(indices) == 1:
+    idx_min = indices[0]
+    idx_max = indices[0]
+else:
+    idx_min = indices[0]
+    idx_max = indices[1]
+    
 wavelength_arr = wavelength_arr[idx_min: idx_max + 1]
 channel_arr = channel_arr[idx_min: idx_max + 1]
 power_percentage_arr = power_percentage_arr[idx_min: idx_max + 1]

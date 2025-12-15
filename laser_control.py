@@ -119,8 +119,15 @@ indices = [
     i for i, w in enumerate(wavelength_arr)
     if wavelength_range[0] <= w <= wavelength_range[1]
 ]
-idx_min = indices[0]
-idx_max = indices[1]
+if len(indices) == 0:
+    print('nothing to measure')
+if len(indices) == 1:
+    idx_min = indices[0]
+    idx_max = indices[0]
+else:
+    idx_min = indices[0]
+    idx_max = indices[1]
+
 wavelength_arr = wavelength_arr[idx_min: idx_max + 1]
 channel_arr = channel_arr[idx_min: idx_max + 1]
 power_percentage_arr = power_percentage_arr[idx_min: idx_max + 1]
@@ -161,7 +168,9 @@ try:
             single_on_off(conn, grid, channel, wavelength, power, on_time=3, off_time=10)
 
         elif cmd == "wavelength" and laser_state != "wavelength":
+            ###
             time_dependent_wavelength(conn, grid, channel_arr, wavelength_arr, power_percentage_arr, on_time=1, off_time=10)
+            ###
         # elif cmd == "power" and laser_state != "power":
         #     channel = 6
         #     power_values = ["30.5", "22.5", "16.8", "12.5", "9.3", "6.8", "5.3"] ### adjust this based on power measured
