@@ -113,6 +113,13 @@ for index, row in df.iterrows():
     wavelength_arr.append(wavelength)
     power_percentage_arr.append(power_percentage)
 
+wavelength_range = ["450", "680"]
+idx_min = wavelength_arr.index(wavelength_range[0])
+idx_max = wavelength_arr.index(wavelength_range[1])
+wavelength_arr = wavelength_arr[idx_min: idx_max + 1]
+channel_arr = channel_arr[idx_min: idx_max + 1]
+power_percentage_arr = power_percentage_arr[idx_min: idx_max + 1]
+
 try:   
     while True:
         try:

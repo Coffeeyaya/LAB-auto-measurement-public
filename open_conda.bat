@@ -9,3 +9,4 @@ call "C:\\Users\\Snow\\anaconda3\\condabin\\conda.bat" activate base
 
 REM Keep the terminal open
 cmd
+
