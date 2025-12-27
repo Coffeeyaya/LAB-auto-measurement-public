@@ -103,7 +103,7 @@ work_flow_vg = [
     {
         "measurement_index": f"vg-{i}",
         "laser_function": f"wavelength,660",
-        "vg_value": f"{i}"
+        "vg_value": f"{vg_arr[i]}"
     }
     for i in range(len(vg_arr))
 ]
