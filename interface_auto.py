@@ -81,7 +81,7 @@ params = {
         "device_number": "3-4",
         "measurement_type": "time",
         "measurement_index": "0",
-        "laser_function": "wavelength",
+        "laser_function": "ref_wavelength",
         "vg_value": "None",
         "rest_time": "1",
         "dark_time1": "1",
