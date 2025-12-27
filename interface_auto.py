@@ -78,7 +78,7 @@ def change_params(params, key_values_pairs):
 
 params = {
         "material": "mw",
-        "device_number": "3-4",
+        "device_number": "4-4",
         "measurement_type": "time",
         "measurement_index": "0",
         "laser_function": "wavelength",
@@ -111,7 +111,7 @@ work_flow_vg = [
 # work_flow = work_flow_vg3
 # work_flow = work_flow_vg1 + work_flow_vg2 + work_flow_vg3 # for wavelevngth dependent at vg = -4 ~ 0
 work_flow = [
-    {"measurement_index": "2"}
+    {"measurement_index": "0"}
 ]
 # work_flow = work_flow_vg # vg dependent at wavelength = 660 nm
 
