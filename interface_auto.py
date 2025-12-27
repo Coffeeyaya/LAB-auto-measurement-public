@@ -83,7 +83,7 @@ params = {
         "measurement_index": "0",
         "laser_function": "wavelength",
         "vg_value": "None",
-        "rest_time": "1",
+        "rest_time": "60",
         "dark_time1": "1",
         "dark_time2": "1",
     }
