@@ -64,22 +64,10 @@ def change_params(params, key_values_pairs):
         params_copy[k] = v
     return params_copy
 
-params = {
-        "material": "mw",
-        "device_number": "4-6",
-        "measurement_type": "idvg",
-        "measurement_index": "0",
-        "laser_function": "wavelength",
-        "vg_value": "None",
-        "rest_time": "60",
-        "dark_time1": "1",
-        "dark_time2": "1",
-    }
-
 # params = {
 #         "material": "mw",
-#         "device_number": "4-6",
-#         "measurement_type": "time",
+#         "device_number": "3-4",
+#         "measurement_type": "idvg",
 #         "measurement_index": "0",
 #         "laser_function": "wavelength",
 #         "vg_value": "None",
@@ -87,6 +75,18 @@ params = {
 #         "dark_time1": "1",
 #         "dark_time2": "1",
 #     }
+
+params = {
+        "material": "mw",
+        "device_number": "3-4",
+        "measurement_type": "time",
+        "measurement_index": "0",
+        "laser_function": "wavelength",
+        "vg_value": "None",
+        "rest_time": "1",
+        "dark_time1": "1",
+        "dark_time2": "1",
+    }
 
 
 def get_vg_value(wavelength, set_vg_value):
@@ -98,48 +98,22 @@ def get_vg_value(wavelength, set_vg_value):
 # separate
 wavelength_arr = np.linspace(450, 680, 24, dtype=int).astype(str)
 
-work_flow_vg1 = [
+vg_arr = np.linspace(-2, 2, 5, dtype=int).astype(str)
+work_flow_vg = [
     {
-        "measurement_index": f"{i}",
-        "laser_function": f"wavelength,{wavelength_arr[i]}",
-        "vg_value": get_vg_value(wavelength_arr[i], "-4")
+        "measurement_index": f"vg-{i}",
+        "laser_function": f"wavelength,660",
+        "vg_value": "0"
     }
-    for i in range(len(wavelength_arr))
+    for i in range(len(vg_arr))
 ]
 
-work_flow_vg2 = [
-    {
-        "measurement_index": f"{i + 24}",
-        "laser_function": f"wavelength,{wavelength_arr[i]}",
-        "vg_value": get_vg_value(wavelength_arr[i], "-2")
-    }
-    for i in range(len(wavelength_arr))
-]
-
-work_flow_vg3 = [
-    {
-        "measurement_index": f"{i + 24*2}",
-        "laser_function": f"wavelength,{wavelength_arr[i]}",
-        "vg_value": get_vg_value(wavelength_arr[i], "0")
-    }
-    for i in range(len(wavelength_arr))
-]
-
-# vg_arr = np.linspace(-4, 0, 5, dtype=int).astype(str)
-# work_flow_vg = [
-#     {
-#         "measurement_index": f"vg-{i}",
-#         "laser_function": f"wavelength,660",
-#         "vg_value": "0"
-#     }
-# ]
-
-work_flow = [
-    {"measurement_index": "1"}
-]
 # work_flow = work_flow_vg3
 # work_flow = work_flow_vg1 + work_flow_vg2 + work_flow_vg3 # for wavelevngth dependent at vg = -4 ~ 0
-# work_flow = work_flow_vg # vg dependent at wavelength = 660 nm
+work_flow = [
+    {"measurement_index": "0"}
+]
+work_flow = work_flow_vg # vg dependent at wavelength = 660 nm
 
 
 if __name__ == "__main__":

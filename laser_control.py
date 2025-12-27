@@ -75,7 +75,7 @@ def time_dependent_power(conn, grid, channel, power_values, on_time=10, off_time
     laser_state = "DONE"
     conn.send("DONE")
 
-def single_on_off(conn, grid, channel, wavelength, power, on_time=3, off_time=3):
+def single_on_off(conn, grid, channel, wavelength, power, on_time=1, off_time=5):
     global laser_state
     laser_state = "1_on_off"
     conn.send("1_on_off")
@@ -194,7 +194,7 @@ try:
             idx = wavelength_arr.index(wavelength)
             power = power_percentage_arr[idx]
             channel = channel_arr[idx]
-            single_on_off(conn, grid, channel, wavelength, power, on_time=3, off_time=10)
+            single_on_off(conn, grid, channel, wavelength, power, on_time=1, off_time=5)
 
         elif cmd == "wavelength" and laser_state != "wavelength":
             ###
