@@ -111,7 +111,7 @@ work_flow_vg = [
 # work_flow = work_flow_vg3
 # work_flow = work_flow_vg1 + work_flow_vg2 + work_flow_vg3 # for wavelevngth dependent at vg = -4 ~ 0
 work_flow = [
-    {"measurement_index": "0"}
+    {"measurement_index": "1"}
 ]
 # work_flow = work_flow_vg # vg dependent at wavelength = 660 nm
 
