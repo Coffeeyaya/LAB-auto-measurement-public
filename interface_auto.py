@@ -113,7 +113,7 @@ work_flow_vg = [
 work_flow = [
     {"measurement_index": "0"}
 ]
-work_flow = work_flow_vg # vg dependent at wavelength = 660 nm
+# work_flow = work_flow_vg # vg dependent at wavelength = 660 nm
 
 
 if __name__ == "__main__":
